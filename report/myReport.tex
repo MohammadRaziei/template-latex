@@ -138,12 +138,6 @@
 \usepackage{copyrightbox,doi}
 
 
-\usepackage{tabularx,multirow,multicol,array}
-\newcolumntype{C}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\definecolor{headerColor}{rgb}{0.78,0.85,.95}
-
-
 \usepackage{pgffor}
 \usepackage{placeins}
 \usepackage{comment}
@@ -153,6 +147,8 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \definecolor{headerColor}{rgb}{0.78,0.85,.95}
+
+
 
 \newcounter{magicrownumbers}
 \newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
@@ -178,6 +174,8 @@
 
 %======================================================================================
 
+\usepackage{fancyhdr}
+
 \usepackage[inline]{enumitem}
 \newlist{alphinline}{enumerate*}{1}
 \setlist[alphinline]{label=(\alph*)}
@@ -191,6 +189,10 @@
 \setlist[checklist]{label=$\checkmark$)}
 \newlist{iteminline}{itemize*}{1}
 \setlist[iteminline]{label=$\bullet$}
+
+\setlength\itemsep{0.7em}
+
+\usepackage{titlesec}
 
 \usepackage[localise=on,extrafootnotefeatures]{xepersian} %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \settextfont{XB Niloofar}
@@ -220,6 +222,42 @@
 %]{XB Kayhan Pook}
 %
 
+
+%\makeatletter
+%\def\abjad@zero{}
+%\def\abj@num@i#1{%
+%	\ifcase#1\or الف\or ب\or ج\or د%
+%	\or ه‍\or و\or ز\or ح\or ط\fi
+%	\ifnum#1=\z@\abjad@zero\fi}
+%\def\abj@num@ii#1{%
+%	\ifcase#1\or ی\or ک\or ل\or م\or ن%
+%	\or س\or ع\or ف\or ص\fi
+%	\ifnum#1=\z@\fi\abj@num@i}
+%\def\abj@num@iii#1{%
+%	\ifcase#1\or ق\or ر\or ش\or ت\or ث%
+%	\or خ\or ذ\or ض\or ظ\fi
+%	\ifnum#1=\z@\fi\abj@num@ii}
+%\def\abj@num@iv#1{%
+%	\ifcase#1\or غ\fi
+%	\ifnum#1=\z@\fi\abj@num@iii}
+%\let\@latinalph\@alph%
+%\let\@latinAlph\@Alph%
+%\def\PersianAlphs{%
+%	\let\@alph\abjadnumeral%
+%	\let\@Alph\abjadnumeral%
+%}
+%\def\LatinAlphs{%
+%	\let\@alph\@latinalph%
+%	\let\@Alph\@latinAlph%
+%}
+%\PersianAlphs
+%\makeatother
+
+\newcommand{\textemf}[1]{«#1»}
+\titleformat{\section}{\large\bfseries}{ماده \thesection: }{0em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection- }{0em}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection- }{0em}{}
+
 \usepackage{bidihl}
 \definecolor{lightYellow}{rgb}{1,1,0.73}
 \newcommand{\hl}[1]{\bidihl{#1}}
@@ -248,13 +286,14 @@
 \newcommand{\rltext}[1]{\text{\rl{#1}}}
 \newcommand{\lrtext}[1]{\text{\lr{#1}}}
 
+\newtheorem{note}{تبصره}[section]
 
 
 \newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
 \newcommand*{\Resize}[2]{\resizebox{#1}{!}{$#2$}}%
 \newcommand\rescaleequation[2]{\resizebox{#1\hsize}{!}{$#2$}}
 
-
+\usepackage{ptext}
 
 
 
